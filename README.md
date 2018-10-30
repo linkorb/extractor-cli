@@ -3,6 +3,16 @@ Extractor CLI
 
 Command-line interface for [Extractor](github.com/linkorb/extractor)
 
+## Installation
+
+To install `extractor-cli` on your system, run:
+
+    composer global require linkorb/extractor-cli
+    
+You can now run `extractor` from any directory.
+
+If you only need extractor in a specific project, add `linkorb/extractor-cli` to the `require` or `require-dev` sections of your `composer.json` file.
+
 ## Usage
 
     extractor run path/to/my-extractor.yaml mysql://user:pass@localhost/my-db -i color=red
