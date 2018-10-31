@@ -89,7 +89,10 @@ class RunCommand extends Command
 
 
         $data = $extractor->extract($connections, $inputs);
-        echo json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES) . PHP_EOL;
 
+        $json = json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES) . PHP_EOL;
+        // Use 2 spaces instead of 4 for indention
+        $json = preg_replace('/^(  +?)\\1(?=[^ ])/m', '$1', $json);
+        echo $json;
     }
 }
